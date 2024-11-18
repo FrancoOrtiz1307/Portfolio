@@ -380,5 +380,181 @@ footer a:hover {
     transform: scale(1.3);
 }
 
+/* Para pantallas 4K (3840x2160) */
+@media screen and (min-width: 2560px) {
+    .primer-saludo {
+        padding-left: 30rem;
+    }
 
+    .primer-saludo h1 {
+        font-size: 7rem;
+    }
 
+    .primer-saludo p {
+        font-size: 3rem;
+    }
+
+    .primer-saludo img {
+        width: 600px;
+        height: 600px;
+        right: 25%;
+    }
+
+    .sobre-mi {
+        padding: 2rem 12rem;
+    }
+
+    .sobre-mi .photo-container {
+        flex: 0 0 600px;
+    }
+
+    .sobre-mi img {
+        height: 600px;
+    }
+
+    .project-cards {
+        max-width: 1500px;
+    }
+}
+
+/* Para laptops 1366x768 */
+@media screen and (max-width: 1366px) {
+    .primer-saludo {
+        padding-left: 10rem;
+    }
+
+    .primer-saludo img {
+        right: 15%;
+        width: 300px;
+        height: 300px;
+    }
+
+    .sobre-mi {
+        padding: 1rem 3rem;
+    }
+
+    .project-cards {
+        max-width: 900px;
+    }
+}
+
+/* Para tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .header-items {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .primer-saludo {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .primer-saludo h1 {
+        font-size: 3.5rem;
+    }
+
+    .primer-saludo img {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        width: 250px;
+        height: 250px;
+    }
+
+    .sobre-mi {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .project-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formulario_contacto {
+        padding: 40px;
+    }
+
+    button {
+        width: 30%;
+    }
+}
+
+/* Estilos del menú desplegable */
+.menu-desplegable {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    z-index: 1001;
+}
+
+.menu-desplegable span {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+/* Para móviles (hasta 767px) */
+@media screen and (max-width: 767px) {
+    .menu-desplegable {
+        display: flex;
+    }
+
+    .header-items {
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .header-navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(31, 132, 179, 0.418);
+        backdrop-filter: blur(10px);
+        transform: translateY(-150%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .header-navbar.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header-navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .menu-desplegable.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-desplegable.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-desplegable.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
